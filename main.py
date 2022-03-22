@@ -1,7 +1,6 @@
 import discord
 import os
 import random
-#from discord.ext.commands import cooldown, BucketType
 
 #lets bot run offline from replit for an hour
 from stay_alive import stay_alive # or whatever you named your file and function
@@ -16,15 +15,6 @@ async def on_ready():
   print("Connected\n")
   print(client.user)
 
-#bot repeats whatever you type
-#@client.event
-#async def on_message(message):
-#  if message.author != client.user:
-#    await message.channel.send(message.content) # echos msg
-
-#stop neon from fucking spamming yoosung and getting him blacklisted
-#@commands.cooldown(1, 30, commands.BucketType.user)
-
 #generates greeting if new member joins server
 @client.event
 async def on_member_join(member):
@@ -32,9 +22,6 @@ async def on_member_join(member):
   await member.create_dm()
   await member.dm_channel.send(
     f'I was waiting for you to log on, {member.name}.')
-  #yoosung says welcome server message well supposed to
-  #await member.channel.send(
-  #  f'I was waiting for you to log on, {member.name}.')
 
 #bot outputs random quote if user inputs assigned message
 @client.event
